@@ -1,0 +1,124 @@
+// grid variables
+$grid-columns: 12;
+
+// breakpoints
+$breakpoint-mobile: "only screen and (max-width: 768px)";
+$breakpoint-tablet: "only screen and (min-width: 768px)";
+$breakpoint-screen: "only screen and (min-width: 1024px)";
+$breakpoint-wide:   "only screen and (min-width: 1280px)";
+
+@mixin border-box {
+    box-sizing: border-box;
+}
+
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    @include border-box;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.wrapper, .row {
+    @extend %clearfix;
+}
+
+.wrapper, .row {
+  *zoom: 1;
+}
+
+.wrapper:before, .row:before, .wrapper:after, .row:after {
+    content: " ";
+    display: table;
+}
+
+.wrapper:after, .row:after {
+    clear: both;
+}
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: 0;
+    width: 100%;
+    min-height: 1px;
+}
+
+
+@media #{$breakpoint-mobile} {
+
+    @for $i from 1 through $grid-columns {
+        .m-col-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+    }
+    @for $i from 1 through $grid-columns {
+        .m-off-#{$i} {
+            margin-left: 100% / $grid-columns * $i;
+        }
+    }
+}
+
+@media #{$breakpoint-tablet} {
+
+    @for $i from 1 through $grid-columns {
+        .t-col-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+    }
+    @for $i from 1 through $grid-columns {
+        .t-off-#{$i} {
+            margin-left: 100% / $grid-columns * $i;
+        }
+    }
+}
+@media #{$breakpoint-screen} {
+
+    @for $i from 1 through $grid-columns {
+        .s-col-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+    }
+    @for $i from 1 through $grid-columns {
+        .s-off-#{$i} {
+            margin-left: 100% / $grid-columns * $i;
+        }
+    }
+}
+
+@media #{$breakpoint-wide} {
+
+    @for $i from 1 through $grid-columns {
+        .w-col-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+        .w-off-#{$i} {
+            margin-left: 100% / $grid-columns * $i;
+        }
+    }
+}
