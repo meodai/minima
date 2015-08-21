@@ -1,0 +1,19 @@
+#Methodology
+
+##Minima Boilerplate | Development Library
+
+Simple and minimalist boilerplate for new project
+
+- author  : vanderlanth
+- version : 0.0.1
+
+###Structure
+
+There are 3 level when you work with Minima. There are :
+
+- Pages     (contains modules)
+- Modules   (section, list, header)
+
+Here is an example when create a new module or a new page :
+
+yourModule.jade   |   yourModule.scss   |   yourModule-content.jade

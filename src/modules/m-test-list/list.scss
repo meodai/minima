@@ -1,0 +1,11 @@
+.test {
+    @include vh;
+    color: $type;
+    font-family: monospace;
+    border: 1px solid $type;
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+

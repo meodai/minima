@@ -1,0 +1,30 @@
+{
+  "name": "minima",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.8.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-data": "^1.2.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.2.0"
+  },
+  "devDependencies": {
+    "gulp-jade-globbing": "^0.1.7",
+    "gulp-load-plugins": "^0.10.0",
+    "jade-glob-include": "^1.0.1",
+    "justjaded": "^0.5.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
