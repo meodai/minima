@@ -1,0 +1,14 @@
+@import
+	'reset',
+	'variables',
+	'mixins',
+	'grid',
+	'fonts';
+
+@import
+	'../modules/**/*.scss';
+
+// global CSS Styles
+body {
+    background-color: $bg;
+}

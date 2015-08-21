@@ -1,18 +1,13 @@
 'use strict';
+
 var gulp					= require('gulp');
-var sass					= require('gulp-sass');
-var jade					= require('gulp-jade');
-var jadeGlobbing			= require('gulp-jade-globbing');
-var uglify					= require('gulp-uglify');
-var minifyCss				= require('gulp-minify-css');
-var minifyHTML				= require('gulp-minify-html');
-var autoprefixer			= require('gulp-autoprefixer');
-var eslint					= require('gulp-eslint');
-var concat					= require('gulp-concat');
-var browserSync				= require('browser-sync').create();
-var data 					= require('gulp-data');
-var yaml 					= require('yamljs');
+var $ = require('gulp-load-plugins')({
+	scope: ['devDependencies']
+});
 var fs 						= require('fs');
+var browserSync				= require('browser-sync').create();
+var yaml 					= require('yamljs');
+var pngquant 				= require('imagemin-pngquant');
 
 gulp.task('watch', function(gulpCallback) {
 	browserSync.init({
@@ -23,36 +18,39 @@ gulp.task('watch', function(gulpCallback) {
 		gulp.watch('build/*.css', browserSync.reload);
 		gulp.watch('build/*.js', browserSync.reload);
 		gulp.watch('src/modules/**/*.jade', browserSync.reload);
+		gulp.watch('src/modules/**/*.scss', browserSync.reload);
 		gulp.watch('src/content/*.yml', browserSync.reload);
 
 		gulp.watch('src/modules/**/*.scss', ['sass']);
-		gulp.watch('src/reset/*.scss', ['sass']);
+		gulp.watch('src/styles/*.scss', ['sass']);
 
+		gulp.watch('src/content/texts/*.yml', ['pages']);
 		gulp.watch('src/modules/**/*.jade', ['pages']);
 		gulp.watch('src/pages/*.jade', ['pages']);
 
 		gulp.watch('src/js/*.js',['scripts']);
 		gulp.watch('src/js/*.js',['eslint']);
 
+		gulp.watch('src/content/images/*',['images']);
+
 		gulpCallback();
 	});
 });
 
 gulp.task('sass', function() {
-		return gulp.src(['src/reset/reset.scss',
-						 'src/reset/variables.scss',
-						 'src/reset/mixins.scss',
-						 'src/reset/grid.scss',
-						 'src/reset/general.scss',
-						 'src/modules/**/*.scss'])
-		.pipe(concat('minima-all.scss'))
-		.pipe(sass())
-		.pipe(autoprefixer({
+		return gulp.src(['src/styles/main.scss'])
+		.pipe($.cssGlobbing({
+        	extensions: ['.scss']
+      	}))
+		.pipe($.sass({
+			// includePaths: ['./src/content/data/']
+		}).on('error', $.sass.logError))
+		.pipe($.autoprefixer({
 				cascade: false
 		 }))
-		.pipe(minifyCss({compatibility: 'ie8'}))
-		.pipe(gulp.dest('build/'))
-		.pipe(browserSync.stream());
+		//.pipe($.minifyCss({compatibility: 'ie8'}))
+		.pipe(gulp.dest('./build/'))
+		.pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 gulp.task('pages', function(){
@@ -61,37 +59,47 @@ gulp.task('pages', function(){
 				spare:true
 		};
 		gulp.src('src/pages/*.jade')
-		.pipe(jadeGlobbing())
-		.pipe(data(function(file) {
-			var files = fs.readdirSync('./src/content/');
+		.pipe($.jadeGlobbing())
+		.pipe($.data(function(file) {
+			var files = fs.readdirSync('./src/content/data/');
 			var jadeData = {};
 			var i = 0;
 			while(file = files[i++]) {
 				var fileName = file.split('.')[0];
-				jadeData[fileName] = yaml.load('./src/content/' + file);
+				jadeData[fileName] = yaml.load('./src/content/data/' + file);
 			}
 			return jadeData;
 		}))
-		.pipe(jade())
-		.pipe(minifyHTML(opts))
-		.pipe(gulp.dest('build/'))
+		.pipe($.jade())
+		.pipe(gulp.dest('./build/'))
 		.pipe(browserSync.stream());
 });
 
 gulp.task('scripts', function() {
 		return gulp.src(['src/js/plugin.js',
 						 'src/js/main.js'])
-		.pipe(concat('minima-all.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('build/'))
+		.pipe($.concat('minima-all.js'))
+		.pipe($.uglify())
+		.pipe(gulp.dest('./build/'))
 		.pipe(browserSync.stream());
 });
 
 gulp.task('eslint', function() {
 		return gulp.src('src/js/*.js')
-		.pipe(eslint())
-		.pipe(eslint.format())
-		.pipe(eslint.failOnError());
+		.pipe($.eslint())
+		.pipe($.eslint.format())
+		.pipe($.eslint.failOnError());
 });
 
-gulp.task('default', ['watch']);
+gulp.task('images', function () {
+    return gulp.src('src/content/images/*')
+        .pipe($.imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('./build/minima-img/images/'));
+});
+
+gulp.task('default', ['images', 'sass', 'pages', 'scripts', 'watch']);
+//gulp.task('deploy-prod', [])
