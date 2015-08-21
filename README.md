@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# summerWebsite2015
-Summer Website for a school project
-=======
 # minima
 A minimal and lightweight static website generator.
 
