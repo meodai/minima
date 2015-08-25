@@ -1,0 +1,8 @@
+mixin menu(classes, content)
+	- var content = content || {}
+	- var classes = classes || {}
+	section(class=classes)
+		nav.menu-opened-priNav
+			each item in general.navigation.item
+				li.menu-opened-priNav-item= item
+		mixin button(content.navigation.closeButton, 'btn menu-opened-close-btn icon-close')

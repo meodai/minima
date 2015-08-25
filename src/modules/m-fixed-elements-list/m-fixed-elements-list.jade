@@ -1,0 +1,7 @@
+mixin m-fixed-elements-list(content, classes)
+	- var content = content || {}
+	- var classes = classes || {}
+
+	.fixed-elements-infos-data.s-col-6
+		span.fixed-elements-infos-data-type= content.type
+		span.fixed-elements-infos-data-content= content.content

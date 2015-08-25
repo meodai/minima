@@ -1,0 +1,36 @@
+.menu-opened {
+	@include full;
+	z-index: 10;
+	background-color: $bg;
+	&-priNav {
+		@include vh;
+		top: 55%;
+		float: right;
+		width: 100%;
+		&-item {
+			list-style : none;
+			font-family : $bauer;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+			font-size: 40px;
+			margin: 20px 0;
+			width: calc(300px + 15%);
+			margin-left: calc(85% - 300px);
+		}
+	}
+	&-close-btn{
+		background-color: $bg;
+		border: none;
+		text-transform: uppercase;
+		position: fixed;
+		top: 45px;
+		left: 75px;
+		font-size: 18px;
+		&:before{
+			font-size: 30px;
+			position: absolute;
+			left: -50px;
+			top: -4px;
+		}
+	}
+}

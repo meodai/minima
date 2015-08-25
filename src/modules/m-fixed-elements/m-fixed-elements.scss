@@ -1,0 +1,57 @@
+@mixin cross($w, $h){
+	@include screenCentered;
+	content: '';
+	top: 51%;
+	display: block;
+	width: $w;
+	height: $h;
+	background-color: $white;
+	opacity: 0.4;
+	z-index: 200;
+}
+
+.fixed-elements {
+	&-menu {
+		font-size: 50px;
+		position: fixed;
+		top: 35px;
+		left: 25px;
+		cursor: pointer;
+		z-index: 200;
+	}
+	&-center {
+		position: fixed;
+		z-index:500;
+		top: 51%;
+		left: 50%;
+		&:before{
+			@include cross(110px, 1px);
+		}
+		&:after{
+			@include cross(1px, 110px);
+		}
+	}
+	&-infos {
+		z-index: 200;
+		position: fixed;
+		left: 13%;
+		top: calc(100vh - 80px);
+		font-size: 11px;
+		width: 360px;
+		text-transform: uppercase;
+		&-ip {
+			letter-spacing: 2px;
+			padding: 0 0 10px 0;
+			display: block;
+			&:before{
+				@include beforeAfter;
+				background-color: $white;
+				position: relative;
+				width: 20px;
+				height: 1px;
+				top: 9px;
+				left: -35px;
+			}
+		}
+	}
+}

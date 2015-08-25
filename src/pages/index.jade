@@ -1,11 +1,17 @@
 include ../modules/**/*.jade
+- var imgPath  = "minima-img/images/"
+- var iconPath = "minima-img/icons/"
 
 doctype
 html
-	mixin head('Start Page')
-	body.wrapper
-		| content badalsjdaldja
-		| conasdasdas
-	mixin list
-
+	mixin head('Rapport de voyage - Annecy 2015')
+	body
+		mixin m-fixed-elements('fixed-elements wrapper', general)
+		//-mixin loading('section-loading wrapper', general.loading)
+		//-mixin menu('menu-opened wrapper', general)
+		//-mixin homepage
+		//-mixin about('section-about wrapper', general.about)
+		section.moments
+			//-mixin section-map('section-map')
+			mixin section-galerie('section-galerie wrapper', general.moments)
 	mixin js

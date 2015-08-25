@@ -1,0 +1,29 @@
+.section-loading{
+	height: 100vh;
+	&-infos {
+		@include vh;
+		top: 52%;
+		font-size: 15px;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: $grey;
+		padding: 0;
+		&:before{
+			@include beforeAfter;
+			width: 60px;
+			height: 60px;
+			background: url($imgPath+'headphones.svg') no-repeat center;
+			position: absolute;
+			left: -105px;
+		}
+	}
+	&-loader { //faked actually
+		@include vh;
+		top: 52%;
+		position: absolute;
+		right: 38%;
+		width: 1px;
+		height: 220px;
+		background-color: $grey;
+	}
+}

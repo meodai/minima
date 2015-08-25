@@ -1,0 +1,40 @@
+.homepage-header {
+	@include full;
+	padding: 0;
+	background		: url($imgPath+'homepage-compressor.jpg') no-repeat center;
+	background-size : cover;
+
+	&-title {
+		@include vh;
+		top: 55%;
+		font-family     : $bauer;
+		font-weight 	: normal;
+		font-size 		: 39px;
+		text-transform  : uppercase;
+		letter-spacing  : 20px;
+
+		&-part:first-child{
+			text-align : right;
+			padding: 0 5px 0 10px;
+		}
+
+		&-part:last-child{
+			text-align : left;
+			padding: 10px 0 0 20px;
+		}
+	}
+}
+
+.btn-access-map {
+	background-color 	: transparent;
+	color 				: $white;
+	font-family 		: $andale;
+	text-transform 		: uppercase;
+	padding 			: 7px 25px 8px 25px;
+	position 			: absolute;
+	bottom 				: 90px;
+	left 				: 50%;
+	z-index: 15;
+	@include transform(translateX(-50%));
+}
+

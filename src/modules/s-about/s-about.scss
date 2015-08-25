@@ -1,0 +1,46 @@
+.section-about{
+	@include full;
+	background: url($imgPath+'homepage-compressor.jpg') no-repeat center;
+	background-size: cover;
+	font-size: 18px;
+	&:after {
+		@include full;
+		content: '';
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index:180;
+	}
+	&:before{
+		height: 100vh;
+		width: 30%;
+		content: '';
+		position: absolute;
+		background-color: rgba(21, 21, 21, 1);
+		z-index:170;
+	}
+	&-article{
+		@include vh;
+		top: 55%;
+		z-index:190;
+	}
+	&-title{
+		position: absolute;
+		top: -160px;
+		font-family: $bauer;
+		font-size: 40px;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+}
+
+.about-content{
+	line-height: 30px;
+	padding: 0 50px 0 0;
+}
+
+.about-list{
+	margin-top: 32px;
+	&-item{
+		margin: 0 0 7px 0;
+	}
+}

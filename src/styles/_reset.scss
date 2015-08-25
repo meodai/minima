@@ -1,4 +1,4 @@
-  * {
+* {
   margin: 0;
   padding: 0;
 }
@@ -12,6 +12,10 @@ html {
 
 body {
   margin: 0;
+}
+
+li {
+  list-style: none;
 }
 
 article,
@@ -72,7 +76,7 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 
 
@@ -110,7 +114,8 @@ svg:not(:root) {
 }
 
 figure {
-  margin: 1em 40px;
+  margin: 0;
+  padding: 0;
 }
 
 hr {
@@ -138,6 +143,9 @@ textarea {
   color: inherit;
   font: inherit;
   margin: 0;
+  background-color: white;
+  border: 1px solid white;
+  padding: 0;
 }
 
 
@@ -167,6 +175,11 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+button:focus,
+input:focus{
+  outline: none;
 }
 
 input {

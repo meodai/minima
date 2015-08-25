@@ -1,0 +1,95 @@
+@font-face {
+	font-family: 'BauerBodoniStd-Roman';
+	src: url($fontPath+'bauer/BauerBodoniStd-Roman.eot?#iefix') format('embedded-opentype');
+	src: url($fontPath+'bauer/BauerBodoniStd-Roman.otf') format('opentype'),
+		 url($fontPath+'bauer/BauerBodoniStd-Roman.woff') format('woff'),
+		 url($fontPath+'bauer/BauerBodoniStd-Roman.ttf') format('truetype'),
+		 url($fontPath+'bauer/BauerBodoniStd-Roman.svg#BauerBodoniStd-Roman') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'AndaleMono';
+	src: url($fontPath+'andale/AndaleMono.eot?#iefix') format('embedded-opentype');
+	src: url($fontPath+'andale/AndaleMono.woff') format('woff'),
+		 url($fontPath+'andale/AndaleMono.ttf') format('truetype'),
+		 url($fontPath+'andale/AndaleMono.svg#AndaleMono') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url($iconPath+'icomoon.eot?-j7wqbk');
+	src:url($iconPath+'icomoon.eot?#iefix-j7wqbk') format('embedded-opentype'),
+		url($iconPath+'icomoon.ttf?-j7wqbk') format('truetype'),
+		url($iconPath+'icomoon.woff?-j7wqbk') format('woff'),
+		url($iconPath+'icomoon.svg?-j7wqbk#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'TradeGothicLTStd-BdCn20';
+	src:url($iconPath+'TradeGothicLTStd-BdCn20.eot?#iefix') format('embedded-opentype'),
+		url($iconPath+'TradeGothicLTStd-BdCn20.otf')  format('opentype'),
+		url($iconPath+'TradeGothicLTStd-BdCn20.woff') format('woff'),
+		url($iconPath+'TradeGothicLTStd-BdCn20.ttf')  format('truetype'),
+		url($iconPath+'TradeGothicLTStd-BdCn20.svg#TradeGothicLTStd-BdCn20') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pin .path1:before {
+	content: "\e608";
+	color: #000;
+}
+.icon-pin .path2:before {
+	content: "\e609";
+	margin-left: -1em;
+	color: rgb(255,255,255);
+}
+.icon-pin .path3:before {
+	content: "\e60a";
+	margin-left: -1em;
+	color: #000;
+}
+.icon-close:before {
+	content: "\e600";
+}
+.icon-menu:before {
+	content: "\e601";
+}
+.icon-play:before {
+	content: "\e602";
+}
+.icon-pause:before {
+	content: "\e603";
+}
+.icon-backward:before {
+	content: "\e604";
+}
+.icon-forward:before {
+	content: "\e605";
+}
+.icon-volume:before {
+	content: "\e606";
+}
+.icon-mute:before {
+	content: "\e607";
+}

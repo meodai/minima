@@ -1,2 +1,18 @@
-$bg : #ddd;
-$type : #999;
+// grid variables
+$grid-columns: 12;
+$wrapper-width: 90%;
+$column-padding: 0 10px;
+
+
+$imgPath 	: './minima-img/images/';
+$iconPath 	: './minima-img/icons/';
+$fontPath 	: './fonts/';
+
+$andale 	: 'AndaleMono', monospace;
+$bauer		: 'BauerBodoniStd-Roman', serif;
+$trade		: 'TradeGothicLTStd-BdCn20', serif;
+
+
+$white		: #eee;
+$bg 		: #151515;
+$grey		: rgba(70,70,70, 1);

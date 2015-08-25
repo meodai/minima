@@ -1,0 +1,12 @@
+.switch-button{
+	width: 400px;
+	margin: 40px auto 80px auto;
+	text-align: center;
+	position: relative;
+	&-case{
+		display: inline-block;
+		width: 200px;
+		border: 1px solid $white;
+		padding: 3px 0 4px 0;
+	}
+}

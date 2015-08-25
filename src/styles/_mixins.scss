@@ -1,7 +1,22 @@
 @mixin vh{
 	position: relative;
 	top: 50%;
-	transform: translateY(50%);
+	transform: translateY(-50%);
+	will-change: transform;
+}
+
+@mixin screenCentered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3D(-50%, -50%, 0);
+	will-change: transform;
+}
+
+@mixin full{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
 }
 
 @mixin transform($transforms) {
@@ -19,4 +34,9 @@
 
 @mixin appearance-reset{
 	appearance:none;
+}
+
+@mixin beforeAfter{
+	content: '';
+	display: block;
 }

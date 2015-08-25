@@ -1,0 +1,12 @@
+mixin section-galerie(classes, content)
+	- var content = content || {}
+	- var classes = classes || {}
+	- var i = 0;
+	section(class=classes)
+		mixin switch-button('switch-button wrapper', general.moments.switchButton)
+		mixin list-filter('section-galerie-filter wrapper', content.filter)
+		each image in moment.moments
+			if i%5 === 0
+				.clearfix
+			mixin galerie-list-image('moment-image', imgPath+'m'+(i++)+'.jpg', image)
+

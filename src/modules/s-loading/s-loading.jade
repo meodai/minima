@@ -1,0 +1,6 @@
+mixin loading(classes, content)
+	- var content = content || {}
+	- var classes = classes || {}
+	section(class=classes)
+		span.section-loading-loader
+		h3.section-loading-infos.s-off-9.s-col-2=content.message

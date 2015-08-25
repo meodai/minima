@@ -1,0 +1,12 @@
+mixin about(classes, content)
+	- var content = content || {}
+	- var classes = classes || {}
+	section(class=classes)
+		article.section-about-article.t-off-1.t-col-10
+			h2.section-about-title.row= content.title
+			p.about-content.t-col-6= content.article
+			ul.about-list.t-off-1.t-col-5
+				each item in content.infos
+					li.about-list-item
+						span.type.t-col-6= item.type
+						span.content= item.content

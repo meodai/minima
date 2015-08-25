@@ -10,5 +10,9 @@
 
 // global CSS Styles
 body {
-    background-color: $bg;
+	background-color : $bg;
+	color 			 : $white;
+	font-family		 : $andale;
+	padding: 0 !important;
+	margin: 0 !important;
 }

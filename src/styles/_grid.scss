@@ -1,6 +1,3 @@
-// grid variables
-$grid-columns: 12;
-
 // breakpoints
 $breakpoint-mobile: "only screen and (max-width: 768px)";
 $breakpoint-tablet: "only screen and (min-width: 768px)";
@@ -36,7 +33,8 @@ img {
 }
 
 .wrapper {
-    width: 100%;
+    width: $wrapper-width;
+    margin: 0 auto;
 }
 
 .wrapper, .row {
@@ -75,12 +73,17 @@ img {
     @for $i from 1 through $grid-columns {
         .m-col-#{$i} {
             width: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
     }
     @for $i from 1 through $grid-columns {
         .m-off-#{$i} {
             margin-left: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
+    }
+    .m-hide{
+        display: none;
     }
 }
 
@@ -89,12 +92,17 @@ img {
     @for $i from 1 through $grid-columns {
         .t-col-#{$i} {
             width: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
     }
     @for $i from 1 through $grid-columns {
         .t-off-#{$i} {
             margin-left: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
+    }
+    .t-hide{
+        display: none;
     }
 }
 @media #{$breakpoint-screen} {
@@ -102,12 +110,17 @@ img {
     @for $i from 1 through $grid-columns {
         .s-col-#{$i} {
             width: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
     }
     @for $i from 1 through $grid-columns {
         .s-off-#{$i} {
             margin-left: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
+    }
+    .s-hide{
+        display: none;
     }
 }
 
@@ -116,9 +129,14 @@ img {
     @for $i from 1 through $grid-columns {
         .w-col-#{$i} {
             width: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
         .w-off-#{$i} {
             margin-left: 100% / $grid-columns * $i;
+            padding: $column-padding;
         }
+    }
+    .w-hide{
+        display: none;
     }
 }

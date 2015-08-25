@@ -1,0 +1,5 @@
+.snazzy-map{
+	@include full;
+	height: 105%; // hack to hide google logos from maps
+	overflow: hidden;
+}

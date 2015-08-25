@@ -1,0 +1,6 @@
+mixin list-filter(classes, content)
+	- var content = content || {}
+	- var classes = classes || {}
+	ul(class=classes)=content.title
+		each item in content.filterName
+			mixin list-filter-item('section-galerie-filter-item', item)

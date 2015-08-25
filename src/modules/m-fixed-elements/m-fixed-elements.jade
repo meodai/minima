@@ -1,0 +1,10 @@
+mixin m-fixed-elements(classes, content)
+	- var content = content || {}
+	- var classes = classes || {}
+	.fixed-elements.wrapper
+		.fixed-elements-menu.icon-menu
+		.fixed-elements-center
+		.wrapper.fixed-elements-infos
+			span.fixed-elements-infos-ip=content.coordinates.ip
+			each data in general.coordinates.infos
+				mixin m-fixed-elements-list(data)

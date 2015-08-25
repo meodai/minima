@@ -1,0 +1,9 @@
+mixin homepage(content, classes)
+	- var content = general || {}
+	- var classes = classes || {}
+	mixin fixed-numbers()
+	header.homepage-header.wrapper
+		h1.homepage-header-title.m-col-12
+			.homepage-header-title-part.part-one.t-col-6= content.homepage.titleOne
+			.homepage-header-title-part.part-two.t-col-6.t-off-6= content.homepage.titleTwo
+	mixin button(content.homepage.button, 'btn btn-access-map')

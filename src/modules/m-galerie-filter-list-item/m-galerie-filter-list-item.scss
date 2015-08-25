@@ -1,0 +1,20 @@
+.section-galerie-filter-item {
+	display: inline-block;
+	width: auto;
+	margin: 0 15px;
+	z-index:200;
+	position: relative;
+	&:first-child{
+		margin-left: 100px;
+	}
+	&:after {
+		content: '/';
+		color: $white;
+		position: absolute;
+		right : -20px;
+		top: 0;
+	}
+	&:last-child:after{
+		content: '';
+	}
+}

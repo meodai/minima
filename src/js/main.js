@@ -9,3 +9,4 @@ var newElement = new PluginName({
 });
 
 newElement.init();
+

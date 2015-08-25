@@ -1,0 +1,6 @@
+mixin switch-button(classes, content)
+	- var content = content || {}
+	- var classes = classes || {}
+	div(class=classes)
+		span.switch-button-case.left= content.buttonOne
+		span.switch-button-case.right= content.buttonTwo

@@ -1,0 +1,11 @@
+mixin galerie-list-image(classes, link, content)
+	- var link    = link || {}
+	- var content = content || {}
+	- var classes = classes || {}
+	a.galerie-list-image.t-col-4
+		span.galerie-list-image-title=content.title
+		div.galerie-list-image-index
+			span=content.current + '/'
+			span=content.total
+		span.galerie-list-image-more voir plus
+		img(src=link, class=classes, alt=content.alt)

@@ -1,0 +1,77 @@
+loading :
+  message : Utiliser un casque audio pour une meilleure expérience
+
+coordinates:
+  ip: 192.44.1O.5
+  infos:
+    -
+      type: Location :
+      content: Annecy
+    -
+      type: Lat :
+      content: -
+    -
+      type: Postcode :
+      content: 23499
+    -
+      type: Lng :
+      content: -
+
+homepage:
+  titleOne: Annecy
+  titleTwo: Rapport de voyage
+  button: Acceder a la carte
+
+navigation:
+  item:
+    home: Home
+    map: Carte
+    gal: Galerie
+    about: A propos
+  closeButton: Fermer le menu
+
+about :
+  title: A propos
+  article: Rapport de vayage reporte divers moments d'un voyage mouvementé que les élèves de deuxième année de l'Eikon ont vécu du 15 au 19 juin 2015 à Annecy lors du Festival International du film d'animation.
+  infos:
+    -
+      type: Réalisé par :
+      content: Nicolas Lanthemann
+    -
+      type: Lieu :
+      content: Zurich
+    -
+      type: Date :
+      content: 10.08.2015
+  closeButton: Fermer l'onglet
+
+moments :
+  switchButton:
+    buttonOne: Carte
+    buttonTwo: Galerie
+  infos:
+    stepOne: Selectionner un lieu
+    stepTwo: Cliquer pour voir plus
+  filter:
+    title: Filtrer par :
+    filterName:
+      festival: Festival
+      city: Ville
+      night: Vie nocturne
+      people: Peuple
+
+momentOpened:
+  index:
+    current: -
+    total: -
+  coordinates:
+    -
+      type: Lieu
+      content: -
+    -
+      type: Lat
+      content: -
+    -
+      type: Lng
+      content: -
+  closeButton: Revenir à la carte
